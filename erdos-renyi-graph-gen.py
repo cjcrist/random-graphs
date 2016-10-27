@@ -8,11 +8,9 @@ import math
 i = 1
 n = 101
 p = .1
-# mean degree - k
-k = (n-1) * p
+
 #edges
-fact = math.factorial(n) / (math.factorial(k) *math.factorial(n-k))
-e = fact * pow(p,k) * pow((1-p),(n-1-k))
+e = p* n* (n-1)/2
 
 while(i < 6):
 	edgeList = []
