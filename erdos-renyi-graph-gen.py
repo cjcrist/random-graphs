@@ -3,11 +3,16 @@
 from __future__ import division
 import sys
 import snap
+import math 
 
 i = 1
 n = 101
 p = .1
-e = (n-1) * p
+# mean degree - k
+k = (n-1) * p
+#edges
+fact = math.factorial(n) / (math.factorial(k) *math.factorial(n-k))
+e = fact * p^(k) * (1-p)^(n-1-k)
 
 while(i < 6):
 	edgeList = []
