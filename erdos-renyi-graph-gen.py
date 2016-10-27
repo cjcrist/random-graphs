@@ -12,7 +12,7 @@ p = .1
 k = (n-1) * p
 #edges
 fact = math.factorial(n) / (math.factorial(k) *math.factorial(n-k))
-e = fact * p^(k) * (1-p)^(n-1-k)
+e = fact * pow(p,k) * pow((1-p),(n-1-k))
 
 while(i < 6):
 	edgeList = []
