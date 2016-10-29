@@ -17,9 +17,9 @@ while(i < 6):
 	UGraph = snap.GenRndGnm(snap.PUNGraph, n, int(e))
 	for EI in UGraph.Edges():
 		edgeList.append([EI.GetSrcNId(), EI.GetDstNId()])
-		with open("randomgraph.meandegree.10." + str(n) + ".elist.txt", "w") as f:
-			for x in edgeList:
-				f.write("%d %d\n" % (x[0], x[1]))
+	with open("randomgraph.meandegree.10." + str(n) + ".elist.txt", "w") as f:
+		for x in edgeList:
+			f.write("%d %d\n" % (x[0], x[1]))
 	
 	n -= 1
 	n = (n * 10) + 1
