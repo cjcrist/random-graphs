@@ -39,8 +39,8 @@ smallWorldGraph = snap.GenSmallWorld(nodes, int(avgOutDegree), 0, Rnd)
 
 for EI in smallWorldGraph.Edges():
 	edgeList.append([EI.GetSrcNId(), EI.GetDstNId()])
-	with open(path, "w") as f:
-		for x in edgeList:
-			f.write('{0:4d} {1:9d}\n'.format(x[0], x[1]))
+with open(path, "w") as f:
+	for x in edgeList:
+		f.write('{0:4d} {1:9d}\n'.format(x[0], x[1]))
 
 print "finished WS graph at time %s\n" % time.ctime()
