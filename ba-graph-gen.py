@@ -35,7 +35,7 @@ avgOutDegree = round(outDegree/nodes)
 # print avgOutDegree
 
 Rnd = snap.TRnd()
-barabasiAlbertGraph = snap.GenPrefAttach(nodes, int(avgOutDegree), 0, Rnd)
+barabasiAlbertGraph = snap.GenPrefAttach(nodes, int(avgOutDegree), Rnd)
 
 for EI in barabasiAlbertGraph.Edges():
 	edgeList.append([EI.GetSrcNId(), EI.GetDstNId()])
