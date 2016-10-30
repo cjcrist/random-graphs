@@ -2,6 +2,7 @@
 
 from __future__ import division
 import sys
+import os
 import snap
 import time
 
@@ -9,6 +10,7 @@ import time
 file = sys.argv[1]
 file_name = file[:-9]
 
+path = os.path.join(r"Centrality/imdbActor/ER", file_name)
 # create a graph
 UGraph = snap.LoadEdgeList(snap.PUNGraph, file, 0, 1)
 
@@ -25,13 +27,13 @@ for NI in UGraph.Nodes():
 # sort list in decending order
 deg_list.sort(reverse = True, key=lambda x: x[1])
 # iterate through the list and print out each entry
-with open(file_name + "degree.txt", "w") as f:
+with open(path + "degree.txt", "w") as f:
 	f.write("Node ID:\tCentrality:\n")
 	for x in deg_list:
 		f.write('{0:5d} {1:15.3e}\n'.format(x[0], x[1])) 
 
 # creates plot data with node id replaced by rank
-with open(file_name + "degree.plot.tab", "w") as f:
+with open(path + "degree.plot.tab", "w") as f:
 	f.write("#\n# Plot data for degree centrality\n#\n# rank:\tcentrality:\n")
 	i=1
 	for x in deg_list:
@@ -167,4 +169,3 @@ with open(file_name + "clustering.plot.tab", "w") as f:
 print "Local Clustering Coefficient output to file at time: " + time.ctime() + "\n"
 
 print "\n\t\t\tEnd of Problem 1\n"
-
