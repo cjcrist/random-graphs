@@ -9,10 +9,11 @@ i = 1
 n = 101
 p = .1
 
-#edges
-e = p* n* (n-1)/2
 
 while(i < 6):
+	#edges
+	e = p* n* (n-1)/2
+	
 	edgeList = []
 	UGraph = snap.GenRndGnm(snap.PUNGraph, n, int(e))
 	for EI in UGraph.Edges():
